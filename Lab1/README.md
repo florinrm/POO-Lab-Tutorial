@@ -4,3 +4,6 @@ POO (paradigma orientata pe obiecte) este un mod de gândire în programare, car
 
 ## Diferența între C și Java
 Până acum ați fost obișnuiți la facultate să scrieți în C în mod procedural
+
+## Java I/O
+### Clasa Scanner
