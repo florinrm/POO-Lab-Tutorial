@@ -1,0 +1,1 @@
+# Clase abstracte și interfețe
