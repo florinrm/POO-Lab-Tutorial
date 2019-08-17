@@ -1,1 +1,1 @@
-# POO-Lab-Tutorial
+# Explicații laborator POO (CA-CD)
