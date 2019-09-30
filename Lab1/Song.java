@@ -30,4 +30,16 @@ public class Song {
     public void setArtistName(String artistName) {
         this.artistName = artistName;
     }
+
+    @Override
+    public boolean equals (Object obj) {
+        // daca obj nu este nicidecum de tip Song, returnam false
+        if (!(obj instanceof Song))
+            return false;
+        // buuun, deci obj este de fapt o instanta a lui Song
+        // asadar trebuie sa castam obj la Song (stati chill, e asa ca sa vedeti acum)
+        // in detaliu veti invata in laburile urmatoare
+        Song s = (Song) obj;
+        return s.title.equals(this.title) && s.artistName.equals(this.artistName) && this.year == s.year;
+    }
 }
