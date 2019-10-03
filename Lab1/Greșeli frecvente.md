@@ -75,7 +75,6 @@ st.name = "Malone"; // nu putem pune valoare campului name
 Student st = new Student(); // am creat obiectul, putem sa ne folosim de el
 st.name = "Malone";
 ```
-## Folosirea array-urilor (mai ales cele de obiecte)
 ## Folosirea keyword-ului `private`
 După cum știți, câmpurile și membrii care sunt `private` pot fi accesați doar în interiorul clasei din care fac parte.
 
@@ -122,6 +121,47 @@ int id = st.id; // iarasi eroare, id este private
 Student st = new Student();
 st.setName("Malone");
 int id = st.getId();
+```
+## Folosirea array-urilor (mai ales cele de obiecte)
+În Java, putem folosi array-uri (impropriu-zis vectori) similar ca în C.
+
+Exemplu - array de 10 numere întregi: `int[] arr = new int[10];` - dimensiune fixă de 10 elemente, new se comportă similar cu malloc-ul din C.
+
+Când construim un array de obiecte, trebuie să avem grijă la popularea array-ului cu obiecte pe care le creăm pe loc, ca în exemplele de mai jos.
+
+Exemple:
+- așa da
+```java
+Student[] arr = new Student[3]; // array de 3 studenti
+arr[0] = new Student(); // mai intai punem un obiect Student in pozitia 0, apoi atribuim valori obiectului din pozitia respectiva
+arr[0].setName("Malone");
+arr[0].setId(69);
+
+Student st = new Student();
+st.setName("Decebal");
+st.setId(420);
+arr[1] = st;
+
+arr[2] = new Student();
+arr[2].setName("Mirona");
+arr[2].setId(489);
+```
+- așa nu
+```java
+Student[] arr = new Student(3); // in acest caz trebuie cu paranteze drepte la marimea array-ului
+// Student arr[3]; // nici asa nu merge sa declari in Java, asa cum poti in C
+arr[0].setName("Malone"); // vom avea NullPointerException, deoarece nu exista obiectul de tip Student din pozitia 0, nu este creat
+arr[0].setId(69);
+
+// codul de mai jos este ok
+Student st = new Student();
+st.setName("Decebal");
+st.setId(420);
+arr[1] = st;
+
+arr[2] = new Student();
+arr[2].setName("Mirona");
+arr[2].setId(489);
 ```
 ## Coding style - nu sunt greșeli, doar indicații de a scrie cod modularizat și ușor de citit
 - numele claselor - e indicat să înceapă cu literă mare
