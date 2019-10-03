@@ -54,9 +54,76 @@ public class MyClass {
 ## Semnătura main-ului
 În Java, funcția main are următoarea semnătură: `public static void main(String[] args)`, care este echivalent cu `int main (int argc, char** args)`. În Java, funcția main nu returnează nimic (este `void`) și este o funcție / metodă statică (o să vedem despre static în următoarele laboratoare). Este important să păstrăm această semnătură pentru ca să fie recunoscut entry point-ul programului.
 ## Instanțierea obiectelor și popularea membrilor unui obiect
-Când vrem să folosim un obiect, mai întâi il instanțiem (adică îl creăm cu ajutorul keyword-ului `new` - echivalent cu `malloc` din C)
+Când vrem să folosim un obiect, mai întâi il instanțiem (adică îl creăm cu ajutorul keyword-ului `new` - echivalent cu `malloc` din C), apoi după instanțiere putem să îi populăm câmpurile cu informații.
+Exemple:
+- clasa pe care o instanțiem
+```java
+public class Student {
+	int id;
+	String name;
+}
+```
+- așa nu
+```java
+Student st; // fara instantiere, are valoare default null
+st.name = "Malone"; // nu putem pune valoare campului name
+// nu are sens sa ne "jucam" cu ceva ce nu exista (obiectul st adica, el nu a fost creat)
+// am avea exceptie NullPointerException - echivalentul lui segfault din C
+```
+- așa da
+```java
+Student st = new Student(); // am creat obiectul, putem sa ne folosim de el
+st.name = "Malone";
+```
 ## Folosirea array-urilor (mai ales cele de obiecte)
 ## Folosirea keyword-ului `private`
+După cum știți, câmpurile și membrii care sunt `private` pot fi accesați doar în interiorul clasei din care fac parte.
+
+Pentru a putea totuși accesa membrii privați, folosim metode de tip getter și setter (treaba asta se leagă de conceptele POO).
+
+Exemple:
+- clasa pe care o instanțiem
+```java
+public class Student {
+	private int id;
+	private String name;
+	
+	// acum, pentru ca avem membrii private, trebuie sa adaugam metodele getter si setter
+	// cu getter obtinem valoarea campului respectiv
+	// cu setter modificam valoarea campului respectiv
+	
+	// getteri
+	public int getId() {
+		return id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	// setteri - sunt mereu de tip void, nu avem nevoie sa returnam
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+}
+```
+- așa nu
+```java
+Student st = new Student();
+st.name = "Malone"; // eroare, name este private, nu poate fi accesat din afara clasei
+int id = st.id; // iarasi eroare, id este private
+```
+- așa da
+```java
+Student st = new Student();
+st.setName("Malone");
+int id = st.getId();
+```
 ## Coding style - nu sunt greșeli, doar indicații de a scrie cod modularizat și ușor de citit
 - numele claselor - e indicat să înceapă cu literă mare
 - o clasă ar trebui să aibă fișierul ei, în sensul că trebuie să existe o clasă (cu keyword-ul public, într-un fișier .java clasa publică aflată în acel fișier trebuie să aibă acelați nume cu fișierul)
+## Compilarea și rularea din linie de comandă
