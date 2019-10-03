@@ -59,4 +59,4 @@ Când vrem să folosim un obiect, mai întâi il instanțiem (adică îl creăm 
 ## Folosirea keyword-ului `private`
 ## Coding style - nu sunt greșeli, doar indicații de a scrie cod modularizat și ușor de citit
 - numele claselor - e indicat să înceapă cu literă mare
-- o clasă ar trebui să aibă fișierul ei, în sensul că trebuie să existe o clasă (cu keyword-ul public
+- o clasă ar trebui să aibă fișierul ei, în sensul că trebuie să existe o clasă (cu keyword-ul public, într-un fișier .java clasa publică aflată în acel fișier trebuie să aibă acelați nume cu fișierul)
