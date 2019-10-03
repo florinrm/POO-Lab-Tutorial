@@ -167,3 +167,11 @@ arr[2].setId(489);
 - numele claselor - e indicat să înceapă cu literă mare
 - o clasă ar trebui să aibă fișierul ei, în sensul că trebuie să existe o clasă (cu keyword-ul public, într-un fișier .java clasa publică aflată în acel fișier trebuie să aibă acelați nume cu fișierul)
 ## Compilarea și rularea din linie de comandă
+- compilare (mai ales când ai mai multe fișiere .java): `javac *java` - o puteți face țărănește
+- rulare - `java Main`, Main fiind numele unei clase unde avem main
+
+Când folosiți pachete, compilați fișierele în folderul cu sursele, apoi rulați executabilul cu main-ul din folderul rădăcină al pachetului. Exemplu: fie pachetul task1, care conține clase, inclusiv clasa cu main. Totul se face în felul următor:
+```
+javac *java - asta in folderul cu sursele
+java task1.Main - asta in folderul radacina al pachetului
+```
