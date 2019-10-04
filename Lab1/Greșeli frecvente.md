@@ -163,6 +163,47 @@ arr[2] = new Student();
 arr[2].setName("Mirona");
 arr[2].setId(489);
 ```
+Este important să alocăm cât avem noi nevoie, nu este ok să aloci memorie pentru 1000 de elemente și să populezi doar cu 50, deoarece, în acest caz, mărimea array-ului va fi 1000. nu 50. În plus, pot apărea probleme (excepția NullPointerException, atunci când încercăm să accesăm un element care nu a fost creat / instanțiat).
+
+Exemplu:
+- așa nu:
+```java
+// noi vrem sa cream un array, in care sa bagam doi studenti
+
+Student[] students = new Student[100]; // gresit, aici trebuia 2 in loc de 100
+Student st = new Student();
+st.setName("Decebal");
+st.setId(420);
+arr[0] = st;
+
+arr[1] = new Student();
+arr[1].setName("Mirona");
+arr[1].setId(489);
+
+for (int i = 0; i < students.length; i++) {
+	System.out.println(arr[i].getName()); // la i = 2 o sa crape codul, se va arunca NullPointerException
+}
+```
+- așa da:
+- așa nu
+```java
+// noi vrem sa cream un array, in care sa bagam doi studenti
+
+Student[] students = new Student[2]; // acum e corect
+Student st = new Student();
+st.setName("Decebal");
+st.setId(420);
+arr[0] = st;
+
+arr[1] = new Student();
+arr[1].setName("Mirona");
+arr[1].setId(489);
+
+for (int i = 0; i < students.length; i++) {
+	System.out.println(arr[i].getName()); // la i = 2 o sa crape codul, se va arunca NullPointerException
+}
+```
+
 ## Coding style - nu sunt greșeli, doar indicații de a scrie cod modularizat și ușor de citit
 - numele claselor - e indicat să înceapă cu literă mare
 - o clasă ar trebui să aibă fișierul ei, în sensul că trebuie să existe o clasă (cu keyword-ul public, într-un fișier .java clasa publică aflată în acel fișier trebuie să aibă acelați nume cu fișierul)
