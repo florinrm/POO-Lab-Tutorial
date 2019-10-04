@@ -185,7 +185,6 @@ for (int i = 0; i < students.length; i++) {
 }
 ```
 - așa da:
-- așa nu
 ```java
 // noi vrem sa cream un array, in care sa bagam doi studenti
 
