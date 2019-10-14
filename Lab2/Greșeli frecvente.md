@@ -1,9 +1,4 @@
 # Greșeli frecvente - labul 2
-// TODO
-
-// constructorul nu are tip de retur
-
-// alocarea obiectelor intr-un array de obiecte - check lab 1
 ## Apelarea unui constructor în alt constructor
 Ca să apelăm un constructor în alt constructor, în cadrul aceleiași clase, folosim `this`.
 
@@ -62,3 +57,6 @@ public class Student {
 	*/
 }
 ```
+
+## Alocarea memoriei obiectelor într-un array de obiecte
+Asta s-a observat și la laboratorul 2. Am detaliat [aici](https://github.com/florinrm/POO-Lab-Tutorial/blob/master/Lab1/Gre%C8%99eli%20frecvente.md), la labul 1.
