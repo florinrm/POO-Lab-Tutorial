@@ -24,7 +24,8 @@ public class Student {
 		this.surname = surname;
 	}
 	
-	// al doilea constructor - aici apelam primul constructor {
+	// al doilea constructor - aici apelam primul constructor 
+	public Student() {
 		// ASA NU
 		// new Student(0, "no name", "no surname");
 		
