@@ -1,1 +1,1 @@
-# Clase abstracte și interfețe
+# `final` si `static`
