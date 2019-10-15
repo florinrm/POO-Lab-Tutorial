@@ -35,5 +35,10 @@ public class Engineer {
         this.surname = surname;
     }
 
+    // o metoda care afiseaza detalii despre inginer
+    public void showCV() {
+        System.out.print(name + " " + surname + " has " + experienceYears + " years experience");
+    }
+
     public void showSkills() {}
 }

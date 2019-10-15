@@ -28,4 +28,10 @@ public class MechanicalEngineer extends Engineer {
     public void showSkills() {
         showEngineType();
     }
+
+    @Override
+    public void showCV() {
+        super.showCV();
+        System.out.println("He / she works on " + engineType + " engines");
+    }
 }

@@ -37,4 +37,16 @@ public class SoftwareEngineer extends Engineer {
     public void showSkills() {
         displaySkills();
     }
+
+    @Override
+    public void showCV() {
+        super.showCV();
+        System.out.println("He / she works as software engineer and is skilled in " + programmingLanguages);
+    }
+
+    // overload
+    public void showCV(String domain) {
+        super.showCV();
+        System.out.println("He / she works as " + domain + " software engineer and is skilled in " + programmingLanguages);
+    }
 }
