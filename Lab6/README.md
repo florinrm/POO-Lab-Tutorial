@@ -113,3 +113,5 @@ class OttoEngine extends Car.Engine {
     }
 }
 ```
+
+## Functii lambda (anonime)
