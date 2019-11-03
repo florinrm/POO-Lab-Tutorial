@@ -116,6 +116,14 @@ class SubInnerClass extends Outer.InnerClass {
     }
 }
 
+interface LambdaInterface {
+    int add(int x, int y);
+}
+
+interface AnotherLambdaInterface {
+    void doStuff();
+}
+
 public class Main {
     public static void main (String[] args) {
         Outer out = new Outer(420);
@@ -167,5 +175,18 @@ public class Main {
         // pe scurt, clasele anonime sunt mostenire in forma minimalista
 
         System.out.println(vect);
+
+        // functii lambda
+        LambdaInterface lambda1 = (int x, int y) -> x + y;
+        LambdaInterface lambda2 = (int x, int y) -> {
+            System.out.println("x = " + x);
+            System.out.println("y = " + y);
+            return x + y;
+        };
+        System.out.println(lambda1.add(6, 9));
+        System.out.println(lambda2.add(6, 9));
+
+        AnotherLambdaInterface lambda3 = () -> System.out.println("PP RULLZ");
+        lambda3.doStuff();
     }
 }
