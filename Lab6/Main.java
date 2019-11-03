@@ -108,6 +108,13 @@ class Outer {
     }
 }
 
+// mostenirea unei clase nested
+class SubInnerClass extends Outer.InnerClass {
+
+    public SubInnerClass(Outer o, int x, int y) {
+        o.super(x, y);
+    }
+}
 
 public class Main {
     public static void main (String[] args) {
