@@ -126,14 +126,14 @@ interface AnotherLambdaInterface {
 }
 
 LambdaInterface lambda1 = (int x, int y) -> x + y;
-        LambdaInterface lambda2 = (int x, int y) -> {
-            System.out.println("x = " + x);
-            System.out.println("y = " + y);
-            return x + y;
-        };
-        System.out.println(lambda1.add(6, 9));
-        System.out.println(lambda2.add(6, 9));
+LambdaInterface lambda2 = (int x, int y) -> {
+	System.out.println("x = " + x);
+	System.out.println("y = " + y);
+	return x + y;
+};
+System.out.println(lambda1.add(6, 9));
+System.out.println(lambda2.add(6, 9));
 
-        AnotherLambdaInterface lambda3 = () -> System.out.println("PP RULLZ");
-        lambda3.doStuff();
+AnotherLambdaInterface lambda3 = () -> System.out.println("PP RULLZ");
+lambda3.doStuff();
 ```
