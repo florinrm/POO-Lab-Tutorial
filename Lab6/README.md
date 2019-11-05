@@ -115,3 +115,25 @@ class OttoEngine extends Car.Engine {
 ```
 
 ## Functii lambda (anonime)
+Noi putem sa implementam interfete (extindem clase abstracte) care au o singura metoda (abstracta) folosind functii anonime.
+```java
+interface LambdaInterface {
+    int add(int x, int y);
+}
+
+interface AnotherLambdaInterface {
+    void doStuff();
+}
+
+LambdaInterface lambda1 = (int x, int y) -> x + y;
+        LambdaInterface lambda2 = (int x, int y) -> {
+            System.out.println("x = " + x);
+            System.out.println("y = " + y);
+            return x + y;
+        };
+        System.out.println(lambda1.add(6, 9));
+        System.out.println(lambda2.add(6, 9));
+
+        AnotherLambdaInterface lambda3 = () -> System.out.println("PP RULLZ");
+        lambda3.doStuff();
+```
