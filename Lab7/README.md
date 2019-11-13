@@ -13,16 +13,11 @@ abstract class Repository {
 		return this.name;
 	}
 	
-	public abstract void accept(Cat v);
-	public abstract void accept(Ls v);
+	public abstract void accept(Visitor v);
 }
 
 class Fisier extends Repository {
-	public void accept(Cat v) {
-		v.visit(this);
-	}
-	
-	public void accept(Ls v) {
+	public void accept(Visitor v) {
 		v.visit(this);
 	}
 }
@@ -38,11 +33,7 @@ class Directory extends Repository {
 		return this.entries;
 	}
 	
-	public void accept(Cat v) {
-		v.visit(this);
-	}
-	
-	public void accept(Ls v) {
+	public void accept(Visitor v) {
 		v.visit(this);
 	}
 }
