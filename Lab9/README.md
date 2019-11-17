@@ -1,1 +1,1 @@
-# Excepții
+# Genericitate
