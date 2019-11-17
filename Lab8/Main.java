@@ -79,7 +79,19 @@ public class Main {
         list.add(42);
         list.add(34);
         System.out.println("\n" + list);
-        
+
+        PriorityQueue<Integer> pq = new PriorityQueue<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return Math.abs(o1) - Math.abs(o2);
+            }
+        });
+        pq.add(4);
+        pq.add(-3);
+        pq.add(5);
+        pq.add(-14);
+        System.out.println(pq);
+
         /*
         lectura suplimentara despre tabelele de dispersie din Java:
         https://stackoverflow.com/questions/2889777/difference-between-hashmap-linkedhashmap-and-treemap
